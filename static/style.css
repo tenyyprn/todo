@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.add-task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+input, select, button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#taskInput {
+    flex-grow: 1;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.filters button, .sort select {
+    margin-left: 0.5rem;
+}
+
+.filters button.active {
+    background-color: #0056b3;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+    background-color: white; /* Ensure background for drag visual */
+}
+
+li:hover {
+    background-color: #f9f9f9;
+}
+
+li.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.task-text {
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.priority-due-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+li:hover .delete-button {
+    opacity: 1;
+}
+
+.footer-controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#clearCompletedButton {
+    background-color: #6c757d;
+}
+
+/* Drag and Drop Styles */
+.dragging {
+    opacity: 0.5;
+    border: 2px dashed #007bff;
+}
+
+.drag-over {
+    border-top: 2px solid #007bff;
+}
